@@ -23,7 +23,7 @@ The example below illustrates using regl-extend to create a template. This isn't
 var regl = require('regl')
 var extendCommand = require('regl-extend').command
 
-function operatorFromTemplate (opts) {
+function operator (opts) {
   return regl(extendCommand({
     vert: `
       precision mediump float;
@@ -40,7 +40,7 @@ function operatorFromTemplate (opts) {
   }, opts))
 }
 
-operatorFromTemplate({
+operator({
   frag: `
     precision mediump float;
     varying vec2 uv; 
