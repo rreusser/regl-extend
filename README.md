@@ -87,7 +87,7 @@ operatorFromTemplate({
 #### `require('regl-extend').framebuffer(a, b[, ...])`
 #### `require('regl-extend').framebufferCube(a, b[, ...])`
 
-Each method extends the properties of a sequence of arguments, returning a new object with the merged contents. The values of any valid properties for that command are transferred. The recursion stops at data values like a regl resource or a bare array. Each successive object provided overwrites existing properties. Unknown properties are ignored.
+Each method extends the properties of a sequence of arguments, returning a new object with the merged contents. The values of any valid properties for that command are transferred. The recursion stops at data values like a regl resource or a bare array. Each successive object provided overwrites existing properties of the result. Unknown properties are ignored.
 
 ### License
 
