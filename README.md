@@ -15,7 +15,7 @@ This module adds simple awareness of valid regl properties to a deep extend func
 
 ## Example
 
-The example below illustrates using regl-extend to create a template. This isn't a particularly interesting case, but it adds a bit of safety to a common use case. `regl-extend` heads this off and ensures any properties of which regl is aware are simply copied.
+The example below illustrates using regl-extend to create a template. This isn't a particularly interesting case, but it adds a bit of safety to a common use case.
 
 ```javascript
 var regl = require('regl')
