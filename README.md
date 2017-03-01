@@ -79,13 +79,13 @@ operatorFromTemplate({
 
 ## API
 
-#### `require('regl-extend').command(a, b[, ...])
-#### `require('regl-extend').buffer(a, b[, ...])
-#### `require('regl-extend').element(a, b[, ...])
-#### `require('regl-extend').texture(a, b[, ...])
-#### `require('regl-extend').renderbuffer(a, b[, ...])
-#### `require('regl-extend').framebuffer(a, b[, ...])
-#### `require('regl-extend').framebufferCube(a, b[, ...])
+#### `require('regl-extend').command(a, b[, ...])`
+#### `require('regl-extend').buffer(a, b[, ...])`
+#### `require('regl-extend').element(a, b[, ...])`
+#### `require('regl-extend').texture(a, b[, ...])`
+#### `require('regl-extend').renderbuffer(a, b[, ...])`
+#### `require('regl-extend').framebuffer(a, b[, ...])`
+#### `require('regl-extend').framebufferCube(a, b[, ...])`
 
 Each method extends the properties of the corresponding `regl` command. The values of any valid properties for that command are transferred. The recursion stops at data values like a regl resource or a bare array. Each successive object provided overwrites existing properties. The function returns a new object with the merged contents. Unknown properties are ignored.
 
