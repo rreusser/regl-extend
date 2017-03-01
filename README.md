@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This module adds simple awareness of valid regl properties to a deep extend function. The intention is to DRY up commands like a fullscreen triangle, for example, that require highly redundant boilerplate, however little.
+This module adds simple awareness of valid regl properties to a deep extend function. The intention is to DRY up commands like a fullscreen triangle, for example, that require highly redundant boilerplate, however little. The only difference between this and regular deep extend (which is probably usually totally fine) is that it allows you to override properties without worrying about recursing into properties like arrays or regl resources that should not be recursed into.
 
 # Installation
 
@@ -15,7 +15,7 @@ This module adds simple awareness of valid regl properties to a deep extend func
 
 ## Example
 
-The example below illustrates using regl-extend to create a template. A normal deep extend runs the risk of recursing into data or arrays. `regl-extend` heads this off and ensures any properties of which regl is aware are simply copied.
+The example below illustrates using regl-extend to create a template. This isn't a particularly interesting case, but it adds a bit of safety to a common use case. `regl-extend` heads this off and ensures any properties of which regl is aware are simply copied.
 
 ```javascript
 var regl = require('regl')
