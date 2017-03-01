@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 var test = require('tape')
 var extend = require('./')
@@ -16,7 +16,7 @@ test('command', function (t) {
         y: 2
       }
     }
-  };
+  }
 
   var b = {
     vert: 'b',
@@ -37,15 +37,15 @@ test('command', function (t) {
       }
     },
     garbage: 'please'
-  };
+  }
 
   var c = {
     scissor: {
       enable: true
     }
-  };
+  }
 
-  var result = extend.command(a, b, c);
+  var result = extend.command(a, b, c)
 
   t.deepEqual(result, {
     vert: 'b',
@@ -66,7 +66,7 @@ test('command', function (t) {
         width: 2
       }
     }
-  });
+  })
 
-  t.end();
-});
+  t.end()
+})

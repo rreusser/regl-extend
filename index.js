@@ -47,15 +47,15 @@ var commandEndpoints = [
   'viewport.x',
   'viewport.y',
   'viewport.width',
-  'viewport.height',
-];
+  'viewport.height'
+]
 
 var bufferEndpoints = [
   'data',
   'length',
   'usage',
-  'type',
-];
+  'type'
+]
 
 var elementEndpoints = [
   'data',
@@ -82,8 +82,8 @@ var textureEndpoints = [
   'alignment',
   'premultiplyAlpha',
   'colorSpace',
-  'channels',
-];
+  'channels'
+]
 
 var renderbufferEndpoints = [
   'format',
@@ -119,28 +119,28 @@ var framebufferCubeEndpoints = [
 
 function makeExtend (schema) {
   function extendMutable (a, b, path) {
-    var propName, value, propPath, dest, nestedPropName, type;
+    var propName, value, propPath, dest, nestedPropName, type
 
     for (propName in b) {
-      if (!b.hasOwnProperty(propName)) continue;
+      if (!b.hasOwnProperty(propName)) continue
 
-      value = b[propName];
-      propPath = (path.length > 0 ? (path + '.') : '') + propName;
+      value = b[propName]
+      propPath = (path.length > 0 ? (path + '.') : '') + propName
 
       if (schema.indexOf(propPath) !== -1) {
         a[propName] = value
       } else if (schema.indexOf(propPath + '.*') !== -1) {
-        dest = a[propName];
+        dest = a[propName]
 
-        if (!dest) dest = a[propName] = {};
+        if (!dest) dest = a[propName] = {}
 
         for (nestedPropName in value) {
-          dest[nestedPropName] = value[nestedPropName];
+          dest[nestedPropName] = value[nestedPropName]
         }
       } else if (typeof b === 'object' && typeof value === 'object') {
-        type = typeof a[propName];
+        type = typeof a[propName]
         if (type === 'undefined' || type !== 'object') {
-          a[propName] = {};
+          a[propName] = {}
         }
 
         extendMutable(a[propName], value, propPath)
@@ -149,21 +149,20 @@ function makeExtend (schema) {
   }
 
   return function () {
-    var newObj = {};
+    var newObj = {}
 
     for (var i = 0; i < arguments.length; i++) {
-      extendMutable(newObj, arguments[i], '');
+      extendMutable(newObj, arguments[i], '')
     }
 
-    return newObj;
+    return newObj
   }
 }
 
-module.exports.command = makeExtend(commandEndpoints);
-module.exports.buffer = makeExtend(bufferEndpoints);
-module.exports.element = makeExtend(elementEndpoints);
-module.exports.texture = makeExtend(textureEndpoints);
-module.exports.renderbuffer = makeExtend(renderbufferEndpoints);
-module.exports.framebuffer = makeExtend(framebufferEndpoints);
-module.exports.framebufferCube = makeExtend(framebufferCubeEndpoints);
-
+module.exports.command = makeExtend(commandEndpoints)
+module.exports.buffer = makeExtend(bufferEndpoints)
+module.exports.element = makeExtend(elementEndpoints)
+module.exports.texture = makeExtend(textureEndpoints)
+module.exports.renderbuffer = makeExtend(renderbufferEndpoints)
+module.exports.framebuffer = makeExtend(framebufferEndpoints)
+module.exports.framebufferCube = makeExtend(framebufferCubeEndpoints)
