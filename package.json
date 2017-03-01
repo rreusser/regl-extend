@@ -1,0 +1,19 @@
+{
+  "name": "regl-extend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "lint && node test.js",
+    "lint": "standard",
+    "lint-fix": "standard --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "deep-equal": "^1.0.1",
+    "standard": "^9.0.0",
+    "tape": "^4.6.3"
+  }
+}
