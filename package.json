@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "lint && node test.js",
+    "test": "npm run lint && node test.js",
     "lint": "standard",
     "lint-fix": "standard --fix"
   },
