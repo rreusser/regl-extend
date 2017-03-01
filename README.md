@@ -1,6 +1,6 @@
 # regl-extend
 
-> [regl](https://github.com/regl-project/regl)-aware extend deep
+> [regl](https://github.com/regl-project/regl)-aware deep extend
 
 ## Introduction
 
