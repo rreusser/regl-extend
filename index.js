@@ -63,7 +63,8 @@ var elementEndpoints = [
   'length',
   'primitive',
   'type',
-  'count'
+  'count',
+  'offset',
 ]
 
 var textureEndpoints = [
