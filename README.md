@@ -41,8 +41,7 @@ createMap({
     varying vec2 uv; 
     uniform sampler2D src;
     void main () {
-      vec4 color = texture2D(src, uv);
-      gl_FragColor = vec4(uv, 0, 1); 
+      gl_FragColor = texture2D(src, uv);
     }  
   `,
   uniforms: {src: regl.prop('src')}
