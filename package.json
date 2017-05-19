@@ -1,6 +1,6 @@
 {
   "name": "regl-extend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "regl-aware deep extend",
   "main": "index.js",
   "scripts": {
