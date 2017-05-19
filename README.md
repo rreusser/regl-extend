@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This module implements deep extend with knowledge of regl attributes so that it can avoid recursing into objects that should be treated as opaque. The intention is to make regl templates more suitable for reuse and public consumption.
+This module implements deep extend with knowledge of regl attributes so that it can avoid recursing into objects like arrays and regl resources that should be treated as opaque. The intention is to make regl templates more suitable for reuse and public consumption.
 
 ## Installation
 
