@@ -20,7 +20,7 @@ The example below illustrates using regl-extend to create a template that maps o
 var regl = require('regl')
 var extendCommand = require('regl-extend').command
 
-var map = opts => regl(extendCommand({
+var createMap = opts => regl(extendCommand({
   vert: `
     precision mediump float;
     attribute vec2 xy; 
@@ -35,7 +35,7 @@ var map = opts => regl(extendCommand({
   count: 3
 }, opts))
 
-map({
+createMap({
   frag: `
     precision mediump float;
     varying vec2 uv; 
