@@ -9,7 +9,7 @@ This module adds simple awareness of valid regl properties to a deep extend func
 ## Installation
 
 ```bash
-# npm install regl-extend
+$ npm install regl-extend
 ```
 
 ## Example
