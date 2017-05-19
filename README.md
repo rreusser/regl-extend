@@ -14,30 +14,28 @@ $ npm install regl-extend
 
 ## Example
 
-The example below illustrates using regl-extend to create a template. This isn't a particularly interesting case, but it adds a bit of safety to a common use case.
+The example below illustrates using regl-extend to create a template that maps one framebuffer to another.
 
 ```javascript
 var regl = require('regl')
 var extendCommand = require('regl-extend').command
 
-function operator (opts) {
-  return regl(extendCommand({
-    vert: `
-      precision mediump float;
-      attribute vec2 xy; 
-      varying vec2 uv; 
-      void main () {
-        uv = 0.5 * (1.0 + xy);
-        gl_Position = vec4(xy, 0, 1); 
-      }   
-    `, 
-    attributes: {xy: [[-4, -4], [0, 4], [4, -4]]},
-    depth: {enable: false},
-    count: 3
-  }, opts))
-}
+var map = opts => regl(extendCommand({
+  vert: `
+    precision mediump float;
+    attribute vec2 xy; 
+    varying vec2 uv; 
+    void main () {
+      uv = 0.5 * (1.0 + xy);
+      gl_Position = vec4(xy, 0, 1); 
+    }   
+  `, 
+  attributes: {xy: [[-4, -4], [0, 4], [4, -4]]},
+  depth: {enable: false},
+  count: 3
+}, opts))
 
-operator({
+map({
   frag: `
     precision mediump float;
     varying vec2 uv; 
