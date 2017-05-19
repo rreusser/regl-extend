@@ -4,14 +4,11 @@
 
 ## Introduction
 
-A work in progress. Trying to convince myself whether or not there's any reason for this to exist. Feedback welcome!
-
 This module adds simple awareness of valid regl properties to a deep extend function. The intention is to DRY up commands like a GPGPU-style command, for example, that require highly redundant boilerplate, however little. The only difference between this and regular deep extend (which is probably usually totally fine) is that it allows you to override properties without recursing into arrays or regl resources that should treated as opaque, making regl templates more suitable for reuse and public consumption.
 
 ## Installation
 
 ```bash
-# Not yet published
 # npm install regl-extend
 ```
 

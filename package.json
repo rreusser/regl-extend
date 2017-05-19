@@ -1,15 +1,19 @@
 {
   "name": "regl-extend",
   "version": "1.0.0",
-  "description": "",
+  "description": "regl-aware deep extend",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && node test.js",
     "lint": "standard",
     "lint-fix": "standard --fix"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "regl",
+    "webgl",
+    "extend"
+  ],
+  "author": "Ricky Reusser",
   "license": "MIT",
   "devDependencies": {
     "deep-equal": "^1.0.1",
