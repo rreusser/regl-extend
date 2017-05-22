@@ -4,7 +4,9 @@
 
 ## Introduction
 
-This module implements deep extend with knowledge of regl attributes (but not regl itself!) so that it can avoid recursing into objects like arrays and regl resources that should be treated as opaque. The intention is to make regl templates more suitable for reuse and public consumption.
+Implements deep extend with an explicitly permitted list of regl attributes so that it can avoid recursing into opaque regl resources. Perhaps makes regl templates more suitable for reuse and public consumption.
+
+If you find missing attributes, please open an issue!
 
 ## Installation
 
@@ -34,7 +36,11 @@ var createMap = opts => regl(extendCommand({
   depth: {enable: false},
   count: 3
 }, opts))
+```
 
+Then use the template by specifying attributes that differ:
+
+```javascript
 createMap({
   frag: `
     precision mediump float;
@@ -82,7 +88,7 @@ createMap({
 #### `require('regl-extend').framebuffer(a, b[, ...])`
 #### `require('regl-extend').framebufferCube(a, b[, ...])`
 
-Each method extends the properties of a sequence of arguments, returning a new object with the merged contents. The values of any valid properties for that command are transferred. The recursion stops at data values like a regl resource or a bare array. Each successive object provided overwrites existing properties of the result. Unknown properties are ignored.
+Extend commands are implemented for each type of regl resource. Each method extends the attributes of a sequence of arguments, returning a new object with the merged contents. The values of any valid properties for that command are transferred. The recursion stops at data values like a regl resource or a bare array. Each successive object provided overwrites existing properties of the result. Unknown properties are ignored.
 
 ### License
 
