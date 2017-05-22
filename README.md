@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Implements deep extend with an explicitly permitted list of regl attributes so that it can avoid recursing into opaque regl resources. Perhaps makes regl templates more suitable for reuse and public consumption.
+Implements deep extend with an explicitly permitted list of regl attributes so that it can avoid recursing into opaque regl resources. Perhaps makes regl templates more suitable for reuse and public consumption. Pushes around keys and values and has no dependency on regl itself.
 
 If you find missing attributes, please open an issue!
 
